@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.radio.model.MemberVO;
+import com.radio.domain.MemberVO;
 import com.radio.service.MemberService;
 
 import lombok.AllArgsConstructor;
@@ -34,13 +34,16 @@ public class MemberController {
 	// 회원가입 submit
 	@PostMapping("/join")
 	public ResponseEntity<MemberVO> insert(MemberVO member, RedirectAttributes rttr) {
+		 
 		// log에 member데이터가 잘 찍히는지 확인
 		log.info("member:" + member);
+		
 		service.insert(member);
 		
 		// grade MemberVO에 잘 담겨있는지 확인
 		log.info("grade:" + member.getGrade());
 		System.out.println(member.getGrade());
+		
 		return new ResponseEntity<MemberVO>(member, HttpStatus.OK);		
 	}
 	

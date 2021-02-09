@@ -1,6 +1,6 @@
 package com.radio.mapper;
 
-import com.radio.model.MemberVO;
+import com.radio.domain.MemberVO;
 
 public interface MemberMapper {
 	public int insertMember(MemberVO member);

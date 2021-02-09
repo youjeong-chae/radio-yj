@@ -3,8 +3,8 @@ package com.radio.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.radio.domain.MemberVO;
 import com.radio.mapper.MemberMapper;
-import com.radio.model.MemberVO;
 
 import lombok.Setter;
 

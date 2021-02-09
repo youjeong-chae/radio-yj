@@ -1,6 +1,6 @@
 package com.radio.service;
 
-import com.radio.model.MemberVO;
+import com.radio.domain.MemberVO;
 
 public interface MemberService {
 	public void insert(MemberVO member);

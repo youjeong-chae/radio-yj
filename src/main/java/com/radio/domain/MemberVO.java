@@ -1,4 +1,4 @@
-package com.radio.model;
+package com.radio.domain;
 
 import java.util.Date;
 
@@ -17,4 +17,5 @@ public class MemberVO {
 	private String add4;
 	private int grade;
 	private Date regdate;
+
 }
