@@ -12,7 +12,7 @@
 		</selectKey>	
 			INSERT INTO tbl_member
 			VALUES (#{bno}, #{name}, #{id}, #{password}, #{email}, 
-			#{add1}, #{add2}, #{add3}, #{add4}, 0, SYSDATE)
+			#{add1}, #{add2}, #{add3}, #{add4}, 0, SYSDATE, 1)
 	</insert>
 
 <!-- 아이디 중복 검사 -->

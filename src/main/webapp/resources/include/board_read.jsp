@@ -45,71 +45,76 @@
 			operForm.attr("action", root + "/board/delete");
 			
 			operForm.submit();
-		});
-		
-		
-		
-		
-		
-		
-		
+		});	
 	});
 </script>
+<style type="text/css">
+	.read-form {
+		margin: 3%;
+		padding: 3%;
+	}
+	
+	.input_border {
+		outline: none;
+		border: none;
+	}
+</style>
 <title>Insert title here</title>
 </head>
 <body>
-<div class="container-sm">
-		<div class="row justify-content-center">
-			<div class="col-lg-12">
-				<h1>게시물 보기</h1>
+
+<div class="read-form">
+		
+			<div class="">
+				<h5>게시물 보기</h5>
 			</div>
-		</div>	
 			
-		<div class="row justify-content-center">
-			<div class="col-lg-12">	
+			
+		<div class="">
+			
 		
 
-			<div class="form-group">
-						<label for="input3">번호</label>
-						<input class="form-control" type="text" id="input3" readonly value="${boardVO.board_bno }" />
+			<div class="">
+				<label for="input_num">번호</label>
+				<input class="input_border" type="text" id="input_num" readonly value="${boardVO.board_bno }" />
 			</div>
 					
-			<div class="form-group">
-				<label for="input1">제목</label> <input readonly value='<c:out value="${boardVO.board_title}" />' type="text"
-							class="form-control" id="input1" >
-			</div>
+			<div class="">
+				<label for="input_title">제목</label> 
+				<input class="input_border" readonly value='<c:out value="${boardVO.board_title}" />' 
+				type="text" class="" id="input_title" >
+		   </div>
 
-			<div class="form-group">
-					<label for="textarea1">내용</label>
-					<textarea readonly class="form-control" id="textarea1"
+			<div class="">
+					<label for="input_content">내용</label>
+					<textarea class="input_border" readonly id="input_content"
 							rows="3"><c:out value="${boardVO.board_content}" /></textarea>
 			</div>
 
-			<div class="form-group">
-					<label for="input2">작성자</label> <input readonly 
+			<div class="">
+					<label for="input_id">작성자</label> <input class="input_border" readonly 
 						  value='<c:out value="${boardVO.board_id }" />' type="text"
-					class="form-control" id="input2" >
+					class="" id="input_id" >
 			</div>
 				
-			<div class="form-group">
-					<label for="input1">조회수</label> <input readonly 
+			<div class="">
+					<label for="input_cnt">조회수</label> <input class="input_border" readonly 
 					    value='<c:out value="${boardVO.board_read_cnt }" />' type="text"
-						class="form-control" id="input1" >
+						class="" id="input_cnt" >
 			</div>
-			</div>
+			
 			
 		</div>
 		
 		
-		<div class="btn-group btn-group-lg">
+		<div class="">
   			<button data-oper="list" type="button" class="btn btn-secondary">목록으로</button>
   			<button data-oper="modify" type="button" class="btn btn-light">수정하기</button>
   			<button data-oper="delete" type="button" class="btn btn-secondary">삭제하기</button>
 		</div>
-</div>
 
 <div class="d-none">
-	<form id="operForm" action="/board/list" method="get">
+	<form id="operForm" action="${root }/board/list" method="get">
 		<input type="hidden" name="pageNum" value="${board_Criteria.pageNum }">
 		<input type="hidden" name="amount" value="${board_Criteria.amount }">
 		<input type="hidden" name="type" value="${board_Criteria.type }">
@@ -121,6 +126,7 @@
 
 </div>
 
+</div>
 
 
 

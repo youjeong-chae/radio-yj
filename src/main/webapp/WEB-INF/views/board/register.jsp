@@ -53,54 +53,6 @@
 </head>
 <body>
 
-<!--  
-<div id="container" class="container">
-	<div class="box daily">
-		<ul class="item corner" id="list">
-			<li>
-			<span>월</span>
-			<a class="test" href="1">월</a>
-			</li>
-			<li>
-			<span>화</span>
-			<a href="2">화</a>
-			</li>
-			<li>
-			<span>수</span>
-			<a href="3">수</a>
-			</li>
-			<li>
-			<span>목</span>
-			<a href="4">목</a>
-			</li>
-			<li>
-			<span>금</span>
-			<a href="5">금</a>
-			</li>
-			<li>
-			<span>토</span>
-			<a href="6">토</a>
-			</li>
-			<li>
-			<span>일</span>
-			<a href="7">일</a>
-			</li>
-		</ul>
-	</div>
-</div>
-
-<form id="actionForm" action="${root }/board/list">
-	<input type="hidden" name="day" value="1">
-	<input type="submit"/>
-</form>
--->
-
-
-
-
-
-
-
 <div class="header2">
         <nav class="header-nav">
             <a href="" style="text-decoration: none; color:white; align-items: center; display: flex;">회원가입</a>

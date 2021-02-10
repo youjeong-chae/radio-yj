@@ -17,5 +17,5 @@ public class MemberVO {
 	private String add4;
 	private int grade;
 	private Date regdate;
-
+	private int enbaled; 
 }
