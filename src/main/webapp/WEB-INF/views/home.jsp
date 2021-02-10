@@ -207,7 +207,7 @@
         </div> 
 
             <div class="nav">
-                <jsp:include page="/resources/include/nav.jsp" />               
+                <jsp:include page="/resources/include/main_nav.jsp" />               
             </div>
 
         <div class="today">
@@ -215,7 +215,7 @@
         </div>
         
         <div class="corner">     
-             <jsp:include page="/resources/include/corner.jsp" />    
+             <jsp:include page="/resources/include/main_corner.jsp" />    
         </div>
         
         <div class="list">
@@ -223,7 +223,7 @@
         </div>
         
         <div class="weekday"> 
-               <jsp:include page="/resources/include/homeintro.jsp" />
+               <jsp:include page="/resources/include/main_homeintro.jsp" />
         </div> 
 
         <div class="radio">

@@ -121,7 +121,7 @@
         
         
         <div class="weekday">
-            <jsp:include page="/resources/include/dayintro.jsp" />
+            <jsp:include page="/resources/include/main_dayintro.jsp" />
         </div>  
         					
 
