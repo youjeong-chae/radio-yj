@@ -14,26 +14,6 @@ function checkAll() {
 	console.log(signUpNameCheck); 
 	console.log(signUpEmailCheck);
 
-
-	/*if (!checkId(document.getElementById("id").value)) {
-        return;
-    } else if (!checkPw(form.password.value)) {
-        return;
-    } else if (!checkConfirmPw(form.confirmPassword.value)) {
-        return;
-    } else if (!checkName(form.name.value)) {
-        return;
-    } else if (!checkEmail(form.email.value)) {
-        return;   
-    } else if (!checkPostCode(form.sample6_postcode.value)) {
-        return;
-    } else if (!checkAdd1(form.sample6_address.value)) {
-        return;
-    } else if (!checkAdd2(form.sample6_detailAddress.value)) {
-        return;
-    } else if (!checkAdd3(form.sample6_extraAddress.value)) {
-        return;
-    }*/
 	checkId(document.getElementById("id").value);
 	checkPw(form.password.value);
 	checkConfirmPw(form.confirmPassword.value);
@@ -55,9 +35,6 @@ function checkAll() {
     } else if(form.email.value == null || form.email.value == "" || form.email.value == undefined) {
     	return;
     }       
-    
-   
-    
     
 	
 	if( signUpPwCheck != "1" &&

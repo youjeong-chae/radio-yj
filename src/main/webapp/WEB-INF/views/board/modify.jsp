@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
 <link rel="stylesheet"
   href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script
@@ -15,94 +16,132 @@
 <script
   src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<style type="text/css">
+	 body {
+	background-image: url("../resources/pic/background.jpg");
+	background-size: contain;
+	}	
+	
+	.nav-menu {
+   	   display: flex;
+   	   text-decoration: none;
+   	   color: white;   	  
+       padding: 10px 30px 10px 30px;
+   }
+   
+   .nav-menu:hover {
+   	   text-decoration: none;
+   }
+</style>
+	
+
+<!--  
 <script type="text/javascript">
-
-	$(document).ready(function(e){
-		
-		var modifyForm = $("#modifyForm");
-		
-		$("button[data-oper='modify']").click(function(e){
+	$(document).ready(function(){
+		var actionForm = $("#actionForm");
+		$(".box weekly a").click(function(e) {
+			e.preventDefault();
 			
+			actionForm.find("[name='day']").val($(this).attr('href'));
 			
-			modifyForm.submit();
+			actionForm.submit();
 		});
-
-		
-		$("button[data-oper='cancel']").click(function(e){
-			modifyForm.append("<input type='hidden' name='board_bno' value='"+${boardVO.board_bno}+"'>");
-			modifyForm.attr("method", "get");
-			modifyForm.attr("action", "/board/read");
-			
-			modifyForm.submit();
-		});
-		
-		
 	});
-
 </script>
-
+-->
 <title>Insert title here</title>
 </head>
 <body>
-<div class="container-sm">
-		<div class="row justify-content-center">
-			<div class="col-lg-12">
-				<h1>게시물 수정하기</h1>
-			</div>
-		</div>	
-			
-		<div class="row justify-content-center">
-			<div class="col-lg-12">	
-		
-				<form id="modifyForm" action="/board/modify" method="post">
-					<div class="form-group">
-								<label for="input3">번호</label>
-								<input class="form-control" name="board_bno" type="text" id="input3" readonly value="${boardVO.board_bno }" />
-					</div>
-							
-					<div class="form-group">
-						<label for="input1">제목</label> <input value='<c:out value="${boardVO.board_title}" />' type="text"
-									name="board_title" class="form-control" id="input1" >
-					</div>
-		
-					<div class="form-group">
-							<label for="textarea1">내용</label>
-							<textarea class="form-control" id="textarea1" name="board_content"
-									rows="3"><c:out value="${boardVO.board_content}" /></textarea>
-					</div>
-					
-					<div class="form-group">
-						<label for="input2">작성자</label> <input name="board_id" type="text"
-							class="form-control" readonly value='<c:out value="${boardVO.board_id }" />' id="input2" placeholder="이름을 입력하세요.">
-					</div>
-					<input type="hidden" name="pageNum" value="${board_Criteria.pageNum }">
-					<input type="hidden" name="amount" value="${board_Criteria.amount }">
-					<input type="hidden" name="type" value="${board_Criteria.type }">
-					<input type="hidden" name="keyword" value="${board_Criteria.keyword }">
-					<input type="hidden" name="day" value="${board_Criteria.day }">
-					
-					
-					<input type="submit" />
-					
-					
-					
-				</form>
-				
-				</div>
-				
-			</div>
-			
-			
-		<div class="btn-group btn-group-lg">
-	  		<button data-oper="modify" type="button" class="btn btn-secondary">수정하기</button>
-	  		<button data-oper="cancel" type="button" class="btn btn-light">취소</button>
-		</div>
+
+<!--  
+<div id="container" class="container">
+	<div class="box daily">
+		<ul class="item corner" id="list">
+			<li>
+			<span>월</span>
+			<a class="test" href="1">월</a>
+			</li>
+			<li>
+			<span>화</span>
+			<a href="2">화</a>
+			</li>
+			<li>
+			<span>수</span>
+			<a href="3">수</a>
+			</li>
+			<li>
+			<span>목</span>
+			<a href="4">목</a>
+			</li>
+			<li>
+			<span>금</span>
+			<a href="5">금</a>
+			</li>
+			<li>
+			<span>토</span>
+			<a href="6">토</a>
+			</li>
+			<li>
+			<span>일</span>
+			<a href="7">일</a>
+			</li>
+		</ul>
+	</div>
 </div>
 
+<form id="actionForm" action="${root }/board/list">
+	<input type="hidden" name="day" value="1">
+	<input type="submit"/>
+</form>
+-->
 
 
 
 
+
+
+
+<div class="header2">
+        <nav class="header-nav">
+            <a href="" style="text-decoration: none; color:white; align-items: center; display: flex;">회원가입</a>
+        </nav>
+    </div>
+    <div class="wrapper">  
+
+        <div class="header">
+            <h1><a class="moon" href="${root }">Moon's radio</a></h1>
+        </div> 
+
+            <div class="nav">
+                <jsp:include page="/resources/include/nav.jsp" />                  
+            </div>
+
+        <div class="corner">     
+             <jsp:include page="/resources/include/corner.jsp" />  
+        </div> 
+        
+        
+        <div class="weekday">
+            <jsp:include page="/resources/include/dayintro.jsp" />
+        </div>  
+        					
+
+       <div class="main">
+       		<jsp:include page="/resources/include/board_modify.jsp" />
+       </div>
+       
+        <div class="empty1">
+
+        </div>
+        
+    </div>
+    
+    <div class="footer">
+        <footer>
+            footer
+        </footer>
+    </div>
+    
 
 
 </body>

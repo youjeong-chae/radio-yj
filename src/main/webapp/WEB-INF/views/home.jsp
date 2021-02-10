@@ -207,12 +207,7 @@
         </div> 
 
             <div class="nav">
-                <div class="nav-flex">               
-                        <a class="nav-menu" href="${root }/mini/list">mini메시지</a>
-                        <a class="nav-menu" href="">선곡표</a>
-                        <a class="nav-menu" href="">사연과 신청곡</a>
-                        <a class="nav-menu" href="">다시듣기</a>                  
-                </div>                
+                <jsp:include page="/resources/include/nav.jsp" />               
             </div>
 
         <div class="today">
@@ -220,12 +215,7 @@
         </div>
         
         <div class="corner">     
-            <strong class="title1"><i id="list" class="far fa-list-alt"></i>매일코너</strong>
-                <ul class="everyDay" style="list-style: none;">
-                    <li class="evList"><i class="fas fa-caret-right"></i><a class="evA" href="">사연과 신청곡</a></li>
-                    <li class="evList"><i class="fas fa-caret-right"></i><a class="evA" href="">하루 틈</a></li>
-                    <li class="evList"><i class="fas fa-caret-right"></i><a class="evA" href="">내일의 BGM, 꺼내 들어요</a></li>
-                </ul>    
+             <jsp:include page="/resources/include/corner.jsp" />    
         </div>
         
         <div class="list">

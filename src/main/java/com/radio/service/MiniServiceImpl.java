@@ -14,7 +14,7 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 @Service
 @AllArgsConstructor
-public class MiniSeriviceImpl implements MiniService {
+public class MiniServiceImpl implements MiniService {
 
 	public MiniMapper mapper;
 	

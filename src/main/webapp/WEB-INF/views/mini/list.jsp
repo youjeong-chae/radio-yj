@@ -113,12 +113,7 @@
         </div> 
 
             <div class="nav">
-                <div class="nav-flex">               
-                        <a class="nav-menu" href="${root }/mini/list">mini메시지</a>
-                        <a class="nav-menu" href="">선곡표</a>
-                        <a class="nav-menu" href="">사연과 신청곡</a>
-                        <a class="nav-menu" href="">다시듣기</a>                  
-                </div>                 
+                <jsp:include page="/resources/include/nav.jsp" />                
             </div>
 
         <div class="corner">     
@@ -130,7 +125,6 @@
             <jsp:include page="/resources/include/dayintro.jsp" />
         </div>  
         					
-
 
        <div class="main">
        		<jsp:include page="/resources/include/mini.jsp"/>
