@@ -158,7 +158,8 @@ $(document).ready(function() {
 }
 
 body {
-	background:darkgrey;
+	background-image: url("../resources/pic/background.jpg");
+	background-size: cover;
 }
 .wapper { 
 	width: 100%;

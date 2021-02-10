@@ -16,23 +16,13 @@
 <script
   src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
-
-<script type="text/javascript">
+<style type="text/css">
+	 body {
+	background-image: url("../resources/pic/background.jpg");
+	background-size: cover;  
+}
+</style>
 	
-	$(document).ready(function() {
-		
-		var actionForm = $("#actionForm");
-		
-		$("#list a").click(function(e){
-			e.preventDefault();
-			
-			actionForm.find("[name='day']").val($(this).attr('href'));
-			
-			actionForm.submit();
-		});
-	});
-</script>	
 
 <!--  
 <script type="text/javascript">
@@ -131,43 +121,10 @@
         
         
         <div class="weekday">
-            <strong class="title1"><i class="far fa-list-alt"></i>요일코너</strong>
-               <ul class="item corner" id="list" style="list-style:none;">
-					<li>
-						<span class="da">월</span>
-						<a href="1" class="tit">영업합니다</a>
-					</li>
-					<li>
-						<span class="da">화</span>
-						<a href="2" class="tit">뮤직에세이, 노래 속 책갈피</a>
-					</li>
-					<li>
-						<span class="da">수</span>
-						<a href="3" class="tit">뮤직에세이, 노래 속 책갈피</a>
-					</li>
-					<li>
-						<span class="da">목</span>
-						<a href="4" class="tit">극한일상</a>
-					</li>
-					<li>
-						<span class="da">금</span>
-						<a href="5" class="tit">전지적 작사 시점</a>
-					</li>
-					<li>
-						<span class="da">토</span>
-						<a href="6" class="tit">SoSo썰_의뢰사연</a>
-					</li>
-					<li>
-						<span class="da">일</span>
-						<a href="7" class="tit">북 트래블러</a>
-					</li>
-				</ul>
-        </div>
+            <jsp:include page="/resources/include/dayintro.jsp" />
+        </div>  
         					
-<form id="actionForm" action="/board/list">
-		<input type="hidden" name="day" value="1">
-		<input type="submit" />
-</form>
+
 
        <div class="main">
        		

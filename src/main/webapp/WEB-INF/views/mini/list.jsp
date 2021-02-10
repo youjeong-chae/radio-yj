@@ -133,7 +133,7 @@
 
 
        <div class="main">
-       		<jsp:include page="/resources/include/weekList.jsp"/>
+       		<jsp:include page="/resources/include/mini.jsp"/>
        </div>
        
         <div class="empty1">

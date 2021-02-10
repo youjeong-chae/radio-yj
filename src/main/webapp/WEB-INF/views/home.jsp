@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script
@@ -14,28 +15,28 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<style>
-    *{
-        margin: 0;
-        padding: 0;
+<style type="text/css">
+	*{	
+	 	margin: 0; 
+      	padding: 0;
     }
-    body {
-        
-        background-image: url('pexels-john-walker-827898.jpg');
-        background-size: cover;
-        
-    }
+
+	body {
+	background-image: url("resources/pic/background.jpg");
+	background-size: cover; 
+	}
+	
    .wrapper{      
         margin: 0 10% 0 10%;
         display: grid;
         grid-gap: 15px;
         height: 100%;
-        grid-template-columns: 1fr 1fr 1fr 1fr ;
+        grid-template-columns: 300px 300px 300px 300px ;
         grid-template-rows:  200px 50px 80px 150px 200px 200px;
         grid-template-areas: 'header header header header'
                              'nav nav nav nav'
                              'today today today today'
-                             'coner weekday SNS every'
+                             'corner weekday SNS every'
                              'list weekday listener every'
                              'list radio empty2 empty1'                            
    }
@@ -56,9 +57,9 @@
         background-color: snow;
         grid-area: today;
    }
-   .coner{
+   .corner{
         background-color: snow;
-        grid-area: coner;
+        grid-area: corner;
    }
    .list{
         background-color: snow;
@@ -91,6 +92,15 @@
         grid-area: every;
    }
    
+   .moon {
+   		text-decoration: none;
+   		color: thistle;
+   }
+   
+   .moon:hover {
+   		text-decoration: none;
+   		color: thistle
+   }
    
    button {      
         padding-left: 30px;
@@ -117,7 +127,19 @@
        background-color: thistle;
        
    }
-   .title {
+   
+   .nav-menu {
+   	   display: flex;
+   	   text-decoration: none;
+   	   color: white;   	  
+       padding: 10px 30px 10px 30px;
+   }
+   
+   .nav-menu:hover {
+   	   text-decoration: none;
+   }
+   
+   .title1 {
        padding: 10px 10px 0px 10px;
    }
 
@@ -144,101 +166,97 @@
        width: 100%;
    }
 
-   i {
+   .fas {
        color: grey;
-       margin-right: 5px;
+       margin-right: 10px;
    }
-   .everyDay li {
-       padding: 0px 5px 10px 20px;
+   
+   #list {
+   	   margin-right: 5px;
    }
-
+   .everyDay .evList {
+       padding: 5px 5px 7px 30px;
+   }
+   .evA {
+   	   text-decoration: none;
+   	   color: grey;
+   }
+   
+   .evA:hover {
+   	   text-decoration: none;
+   }
+   
    .week {
        background-color: black;
        color: white;
    }
 
-   ul {
-       margin: 10%;
-   }
-
-   ul li{
-       padding: 10px;
-   }
 </style>
-<script>  
-</script>
+</head>
 <body>  
     <div class="header2">
         <nav class="header-nav">
             <a href="">회원가입</a>
-            <button class="header-button" type="button">로그인</button>
+            <button class="header-button" type="button">로그인</button> 
         </nav>
     </div>
     <div class="wrapper">  
 
         <div class="header">
-            <h1>Moon's radio</h1>
+            <h1><a class="moon" href="${root }">Moon's radio</a></h1>
         </div> 
 
             <div class="nav">
                 <div class="nav-flex">               
-                        <button type="button">mini메시지</button>
-                        <button type="button">선곡표</button>
-                        <button type="button">사연과 신청곡</button>
-                        <button type="button">다시듣기</button>                   
+                        <a class="nav-menu" href="${root }/mini/list">mini메시지</a>
+                        <a class="nav-menu" href="">선곡표</a>
+                        <a class="nav-menu" href="">사연과 신청곡</a>
+                        <a class="nav-menu" href="">다시듣기</a>                  
                 </div>                
             </div>
 
         <div class="today">
-            <strong class="title">today</strong> |
+            <strong class="title1">today</strong> |
         </div>
         
-        <div class="coner">     
-            <strong class="title"><i class="far fa-list-alt"></i>매일코너</strong>
-                <ul class="everyDay" style="list-style: none; position: relative;">
-                    <li><i class="fas fa-caret-right"></i></li>
-                    <li><i class="fas fa-caret-right"></i></li>
-                    <li><i class="fas fa-caret-right"></i></li>
+        <div class="corner">     
+            <strong class="title1"><i id="list" class="far fa-list-alt"></i>매일코너</strong>
+                <ul class="everyDay" style="list-style: none;">
+                    <li class="evList"><i class="fas fa-caret-right"></i><a class="evA" href="">사연과 신청곡</a></li>
+                    <li class="evList"><i class="fas fa-caret-right"></i><a class="evA" href="">하루 틈</a></li>
+                    <li class="evList"><i class="fas fa-caret-right"></i><a class="evA" href="">내일의 BGM, 꺼내 들어요</a></li>
                 </ul>    
         </div>
         
         <div class="list">
-            <strong class="title" style="overflow: scroll; overflow-x: hidden "><i class="far fa-list-alt"></i>선곡표</strong>
+            <strong class="title1" style="overflow: scroll; overflow-x: hidden "><i id="list" class="far fa-list-alt"></i>선곡표</strong>
         </div>
         
-        <div class="weekday">
-            <strong class="title"><i class="far fa-list-alt"></i>요일코너</strong>
-                <ul style="list-style: none;">
-                    <li><span class="week">월</span></li>                   
-                    <li><span class="week">화</span></li>
-                    <li><span class="week">수</span></li>
-                    <li><span class="week">목</span></li>
-                    <li><span class="week">금</span></li>
-                    <li><span class="week">토</span></li>
-                    <li><span class="week">일</span></li>
-                </ul>
-        </div>
+        <div class="weekday"> 
+               <jsp:include page="/resources/include/homeintro.jsp" />
+        </div> 
 
         <div class="radio">
-            <strong class="title">보이는라디오</strong>
+            <strong class="title1">보이는라디오</strong>
         </div>
 
         <div class="listener">
-            <strong class="title">다시듣기</strong>           
+            <strong class="title1">다시듣기</strong>           
         </div>
 
         <div class="SNS">
-            <strong class="title">sns</strong>
+            <strong class="title1">sns</strong>
         </div>
 
         <div class="empty1">empty</div>
         <div class="empty2">empty</div>
 
         <div class="every">
-            <strong class="title">홍보</strong>
+            <strong class="title1">홍보</strong>
         </div>   
        
     </div>   
+    
     <div class="footer">
         <footer>
             footer
