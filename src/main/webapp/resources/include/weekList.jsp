@@ -113,9 +113,6 @@ th {
 	color: snow;
 }
 
-.numLi {
-	padding: 0px 2px 0px 2px;
-}
 .search-form {
 	border: solid 1px rgb(241, 241, 241);
 	display: flex;
@@ -123,50 +120,58 @@ th {
 	padding: 20px 30px 20px 30px;
 	background-color: rgb(241, 241, 241);
 }
-#pri {
-	color:snow; 
-	background-color: lightslategrey;
-	padding: 0px 4px 0px 4px;
-	border-radius: 3px 3px;
-}
-
-#pri:hover {
-	background-color: snow;
-	color: lightslategrey;
-	border: 1px solid lightslategrey;
-}
-
-#num {
-	color:snow; 
-	background-color: lightslategrey;
-	padding: 0px 4px 0px 4px;
-	border-radius: 3px 3px;
-}
-
-#num:hover {
-	background-color: snow;
-	color: lightslategrey;
-	border: 1px solid lightslategrey;
-}
-
-#nex {
-	color:snow; 
-	background-color: lightslategrey;
-	padding: 0px 4px 0px 4px;
-	border-radius: 3px 3px;
-}
-
-#nex:hover {
-	background-color: snow;
-	color: lightslategrey;
-	border: 1px solid lightslategrey;
-}
-
-#numLi {
-	padding: 0;
-	margint: 0;
-	display: flex;
-}
+.page-nav ul {
+		display: flex;
+		list-style: none;
+		justify-content: center;
+		margin-top: 16px;
+	}
+	
+	.num {
+		border-radius: 3px 3px;
+		text-decoration: none;
+		border: 1px silver solid;		
+		display: inline-block;
+		width: 30px;
+		background-color: lightslategrey;
+		text-align: center;
+		color: white;
+	}
+	
+	.priLi, .numLi, .nexLi {
+		padding: 0;
+	}
+	
+	.pri, .nex {
+		border-radius: 3px 3px;
+		text-decoration: none;
+		border: 1px silver solid;
+		display: inline-block;
+		width: 50px;
+		background-color: lightslategrey; 
+		text-align: center;
+		color: white;
+		
+	}
+	
+	.pri:hover {
+		text-decoration: none;
+		background-color: snow;
+		color: lightslategrey;
+	}
+	
+	.num:hover {
+		text-decoration: none;
+		background-color: snow;
+		color: lightslategrey;
+	}
+	
+	.nex:hover {
+		text-decoration: none;
+		background-color: snow;
+		color: lightslategrey;
+	}
+	
 
 #write-button {	
 	margin-top: 20px;
@@ -242,22 +247,25 @@ th {
 		<!-- prev -->
 		<c:if test="${pageInfo.prev }">
 			<li class="priLi">
-			<a id="pri" href="${pageInfo.startPage-10 }">이전</a>
+			<a class="pri" href="${pageInfo.startPage-10 }">이전</a>
 			</li>
 		</c:if>
 		
 		<!-- pageButton -->
 		<c:forEach var="num" begin="${pageInfo.startPage }" end="${pageInfo.endPage }">
-			<li id="numLi ${pageInfo.board_Criteria.pageNum == num ? 'active' :'' }">
-			<a id="num" href="${num }">${num }</a>
+			
+			<li class="numLi ${pageInfo.board_Criteria.pageNum == num ? 'active' :'' }">
+			<a class="num" href="${num }">${num }</a>
 			</li>
 		</c:forEach>
 		
 		<!-- next -->
 		<c:if test="${pageInfo.next }">
+		
 			<li class="nexLi">
-			<a id="nex" href="${pageInfo.startPage+10 }">다음</a>
+			<a class="nex" href="${pageInfo.startPage+10 }">다음</a>
 			</li>
+			
 		</c:if>
 		</ul>
 	</div>
