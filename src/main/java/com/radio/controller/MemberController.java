@@ -71,8 +71,8 @@ public class MemberController {
 	}
 	
 	@GetMapping("/check")
-	public ModelAndView check() {
-		return new ModelAndView("member/model");
+	public String check() {
+		return "name";
 	}
 	
 	

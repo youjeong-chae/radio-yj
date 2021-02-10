@@ -59,9 +59,6 @@ $(document).ready(function() {
 		var pw1 = $('#password').val();
 		var pw2 = $('#confirmPassword').val();
 		var pwt = /(?=.*\d{1,50})(?=.*[~`!@#$%\^&*()-+=]{1,50})(?=.*[a-zA-Z]{2,50}).{8,50}$/;
-
-		
-		
 		
 			if (pwt.test(pw1)) {
 				$('#password_check').text("");
@@ -459,11 +456,11 @@ p {
 	</div>
 </div>
 
-<input type="text" id="signUpIdCheck" name="signUpIdCheck" hidden>
-<input type="text" id="signUpPwCheck" name="signUpPwCheck" hidden>
-<input type="text" id="signUpRePwCheck" name="signUpRePwCheck" hidden>
-<input type="text" id="signUpNameCheck" name="signUpNameCheck" hidden>
-<input type="text" id="signUpEmailCheck" name="signUpEmailCheck" hidden>
+<input type="text" id="signUpIdCheck" name="signUpIdCheck" >
+<input type="text" id="signUpPwCheck" name="signUpPwCheck" >
+<input type="text" id="signUpRePwCheck" name="signUpRePwCheck" >
+<input type="text" id="signUpNameCheck" name="signUpNameCheck" >
+<input type="text" id="signUpEmailCheck" name="signUpEmailCheck" >
 
 </body>
 </html>
