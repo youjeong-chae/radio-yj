@@ -1,5 +1,7 @@
 package com.radio.listener;
 
+import java.util.Calendar;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -34,6 +36,7 @@ public class RadioAppListener implements ServletContextListener {
         String contextRoot = app.getContextPath();  
         
         app.setAttribute("root", contextRoot);
+        
     }
 	
 }
