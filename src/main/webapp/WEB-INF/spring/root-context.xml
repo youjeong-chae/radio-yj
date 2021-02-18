@@ -9,6 +9,12 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 	
+	<bean id="ociConfigYJPath" class="java.lang.String" >
+		<constructor-arg value="/home/oci-yj/config"></constructor-arg>
+	</bean>
+	<bean id="ociConfigYRPath" class="java.lang.String" >
+		<constructor-arg value="/home/oci-yr/config"></constructor-arg>
+	</bean>
 	<!-- <property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@db202101211528_high?TNS_ADMIN=/home/opc/wallet"></property>		
 		<property name="username" value="admin"></property>		
 		<property name="password" value="$dbfkDbfk1010$"></property> -->
