@@ -37,7 +37,7 @@ public class RadioAppListener implements ServletContextListener {
         
         app.setAttribute("root", contextRoot);
         
-        app.setAttribute("pictroomStaticPath", "https://objectstorage.ap-seoul-1.oraclecloud.com/n/cndwlmgtk97g/b/bucket-20210217-1820/o/");
+        app.setAttribute("picRoomStaticPath", "https://objectstorage.ap-seoul-1.oraclecloud.com/n/cndwlmgtk97g/b/bucket-20210217-1820/o/");
     }
 	
 }
