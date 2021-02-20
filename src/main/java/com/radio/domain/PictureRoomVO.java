@@ -13,4 +13,5 @@ public class PictureRoomVO {
 	private String fileName;
 	private int hit;
 	private Date regdate;
+	
 }

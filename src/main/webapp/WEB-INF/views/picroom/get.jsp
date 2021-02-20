@@ -21,7 +21,7 @@ var pictroomStaticPath = '${picRoomStaticPath}';
 
 $(document).ready(function() {
 	$("#pictureRoom-modify-btn1").hide();
-	$("#pictureRoom-delete-btn1").hide();
+	// $("#pictureRoom-delete-btn1").hide();
 	$("#pictureRoom-file1").hide();
 	
 	var picRoomModal = $("#pictureRoom-modal1");
@@ -123,6 +123,13 @@ $(document).ready(function() {
 <body>
 <div class="container-fluid">
 <form id="pictureRoom-form1" action="${root }/picroom/register" method="post" enctype="multipart/form-data">
+
+   <div class="form-group">
+    <label for="pictureRoom-textarea1">등록일</label>
+    <fmt:formatDate pattern="yyyy-MM-dd" 
+              value="${vo.regdate }" />
+  </div>
+ 
   <div class="form-group">
     <label for="pictureRoom-input1">제목</label>
     <input readonly name="title" value="${vo.title }" type="text" class="form-control" id="pictureRoom-input1">
@@ -134,6 +141,8 @@ $(document).ready(function() {
    <div class="form-group">
 	<img class="img-fluid" src="${picRoomStaticPath}${vo.fileName}" />
   </div>
+   
+  
   <div id="pictureRoom-file1" class="form-group">
     <label for="pictureRoom-file1">사진</label>
     <input type="file" name="file" accept="image/*" class="form-control-file" id="pictureRoom-file1">
@@ -142,9 +151,10 @@ $(document).ready(function() {
   <input type="hidden" name="id" value="${vo.id }" />
   
   <button id="pictureRoom-modify-btn1" type="button" class="btn btn-primary">수정</button>
-  <button id="pictureRoom-delete-btn1" type="button" class="btn btn-danger">삭제</button>
   
-  <button id="pictureRoom-modify-btn2" type="button" class="btn btn-primary">수정 하기</button>
+  <button id="pictureRoom-modify-btn2" type="button" class="btn btn-primary">수정</button>
+  <button id="pictureRoom-delete-btn1" type="button" class="btn btn-danger">삭제</button>
+  <a href="${root }/picroom/list" class="btn btn-primary">목록</a>
   
 </form>
 </div>
@@ -180,7 +190,8 @@ $(document).ready(function() {
         <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
       </div>
       <div id="modal2-success-footer" class="modal-footer">
-        <a href="${root }/picroom/list" class="btn btn-primary">목록 보기</a>
+        <a href="${root }/picroom/list" class="btn btn-primary">목록</a>
+        <a href="${root }/picroom/id/" class="btn btn-primary">게시글</a>
       </div>
     </div>
   </div>

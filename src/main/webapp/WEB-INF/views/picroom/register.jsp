@@ -84,22 +84,10 @@ $(document).ready(function() {
         새 글을 등록하였습니다.
       </div>
       <div class="modal-footer">
-        <a href="${root }/picroom/list" class="btn btn-primary">목록 보기</a>
+        <a href="${root }/picroom/list" class="btn btn-primary">목록</a>
       </div>
     </div>
   </div>
 </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-

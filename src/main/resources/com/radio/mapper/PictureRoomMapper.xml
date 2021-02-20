@@ -14,7 +14,7 @@ UPDATE tbl_pictureroom
 SET
   <if test="fileName != null">
 	fileName = #{fileName},
-  </if>
+  </if>s
 	title = #{title},
 	content = #{content}
 WHERE id = #{id}
@@ -22,14 +22,14 @@ WHERE id = #{id}
 
 <select id="selectById" resultType="com.radio.domain.PictureRoomVO" >
 SELECT 
-id, 
-title,
-content,
-memberId,
-fileName,
-hit,
-regdate
- FROM tbl_pictureroom 
+	id, 
+	title,
+	content,
+	memberId,
+	fileName,
+	hit,
+	regdate
+FROM tbl_pictureroom 
 WHERE id = #{id}
 </select>
 
@@ -92,7 +92,7 @@ create table tbl_pictureroom (
     id number PRIMARY key,
     title varchar2(300),
     content varchar2(3000),
-    member_id varchar2(20),
+     member_id varchar2(20),
     filename varchar2(300),
     hit number,
     regdate date
