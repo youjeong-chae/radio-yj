@@ -2,6 +2,8 @@
   pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,7 +67,7 @@ $(document).ready(function() {
 			imagePath = pictroomStaticPath + item.fileName;
 		}
 		
-		var res = $("<div>").addClass("col-4 ");
+		var res = $("<div>");
 		var card = $("<div>").addClass("card");
 		var img = $("<img>").addClass("card-img-top").attr("src", imagePath);
 		var cardBody = $("<div>").addClass("card-body");
@@ -94,14 +96,25 @@ $(document).ready(function() {
 	 
 });
 </script>
-
+<style>
+#pictureRoom-list1 {
+	grid-template-columns: 30% 30% 30%;
+	justify-content: space-evenly;
+	justify-items: stretch;
+}
+#pictureRoom-list1 div {
+	display: block;
+}
+</style>
 <title>Insert title here</title>
 </head>
 <body>
 <div class="container-fluid">
-	<a href="${root }/picroom/register" type="submit" data-oper='modify' id="pictureRoom-btn" class="btn btn-default">글쓰기</a>
+	<sec:authorize access="hasRole('ROLE_ADMIN')">
 
-	<div class="row row-cols-3" id="pictureRoom-list1" ></div>
+	<a href="${root }/picroom/register" type="submit" data-oper='modify' id="pictureRoom-btn" class="btn btn-default">글쓰기</a>
+</sec:authorize>
+	<div class="row" id="pictureRoom-list1" ></div>
 	<div class="text-center">
 		<button id="pictureRoom-load-btn1" class="btn btn-outline-secondary" >더 보기</button>
 	</div>

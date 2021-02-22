@@ -155,7 +155,7 @@ $(document).ready(function() {
 	  <button id="pictureRoom-modify-btn2" type="button" class="btn btn-primary">수정</button>
 	  <button id="pictureRoom-delete-btn1" type="button" class="btn btn-danger">삭제</button>
 	</sec:authorize>
-  <a href="${root }/picroom/list" class="btn btn-primary">목록</a>
+ 	 <a href="${root }/picroom/list" class="btn btn-primary">목록</a>
   
 </form>
 </div>

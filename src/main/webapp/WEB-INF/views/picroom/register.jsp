@@ -91,6 +91,7 @@
       </div>
       <div class="modal-footer">
         <a href="${root }/picroom/list" class="btn btn-primary">목록</a>
+        <a id="pictureRoomToGetLink1" href="${root }/picroom/id/" class="btn btn-primary">게시글</a>
       </div>
     </div>
   </div>

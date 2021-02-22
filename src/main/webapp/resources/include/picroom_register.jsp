@@ -35,8 +35,9 @@ $(document).ready(function() {
 	        enctype: 'multipart/form-data',
 	        processData: false
 		 })
-		 .done(function() {
-			console.log("성공"); 
+		 .done(function(data) {
+			console.log("성공");
+			$("#pictureRoomToGetLink1").attr("href", $("#pictureRoomToGetLink1").attr("href") + data);
 			$("#pictureRoom-modal-body1").text("새 글을 등록하였습니다.");
 			$("#pictureRoom-modal1").modal("show");
 			$("#pictureRoom-submit-btn1").removeAttr("disabled");

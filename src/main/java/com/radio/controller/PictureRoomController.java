@@ -47,7 +47,7 @@ public class PictureRoomController {
 			service.transfer(file, vo.getId() + "_" + file.getOriginalFilename());
 		}
 		log.info(vo);
-		return new ResponseEntity<String>("success", HttpStatus.OK);
+		return new ResponseEntity<String>("" + vo.getId(), HttpStatus.OK);
 	}
 
 	@GetMapping("/list")

@@ -129,10 +129,11 @@
         ...
       </div>
       <div id="modal3-fail-footer" class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button> -->
       </div>
       <div id="modal3-success-footer" class="modal-footer">
         <a href="${root }/picroom/list" class="btn btn-primary">목록</a>
+   
       </div>
     </div>
   </div>
