@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,11 +30,13 @@ public class PictureRoomController {
 	private PictureRoomService service;
 
 	@GetMapping("/register")
+	@PreAuthorize("isAuthenticated()")
 	public void register() {
 
 	}
 
 	@PostMapping("/register")
+	@PreAuthorize("isAuthenticated()")
 	@ResponseBody
 	public ResponseEntity<String> register(PictureRoomVO vo, MultipartFile file) throws Exception {
 		vo.setFileName(file.getOriginalFilename());
@@ -66,7 +69,8 @@ public class PictureRoomController {
 
 		return "/picroom/get";
 	}
-
+	
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@PostMapping("/delete")
 	public ResponseEntity<String> delete(PictureRoomVO vo, MultipartFile file) {
 		if (service.delete(vo.getId())) {
@@ -76,6 +80,8 @@ public class PictureRoomController {
 		}
 	}
 	
+	
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@PostMapping("/modify")
 	public ResponseEntity<String> modify(PictureRoomVO vo, MultipartFile file) throws Exception {
 		log.info(file);

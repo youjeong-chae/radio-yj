@@ -14,7 +14,7 @@ UPDATE tbl_pictureroom
 SET
   <if test="fileName != null">
 	fileName = #{fileName},
-  </if>s
+  </if>
 	title = #{title},
 	content = #{content}
 WHERE id = #{id}

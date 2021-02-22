@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page session="false" %>
 <!DOCTYPE html>
 <html>
@@ -195,10 +196,31 @@
 </head>
 <body>  
     <div class="header2">
-        <nav class="header-nav">
-            <a href="">회원가입</a>
-            <button class="header-button" type="button">로그인</button> 
-        </nav>
+      	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+		  <div class="collapse navbar-collapse" id="navbarNav">
+		    <ul class="navbar-nav">
+		      <li class="nav-item active">
+	       		 <a class="nav-link" href="/member/register">회원가입 <span class="sr-only">(current)</span></a>
+	      	</li>
+	      <sec:authorize access="isAnonymous()">
+		      <li class="nav-item">
+		        <a class="nav-link" href="/customLogin">로그인</a>
+		      </li>
+	      </sec:authorize>
+	      
+	      <sec:authorize access="isAuthenticated()">
+		      <li class="nav-item">
+	      	<form action="/logout" method="post">
+		        <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }">
+		        <button type="submit" class="btn btn-outline-dark btn-sm">로그아웃</button>
+	      	</form>
+		      </li>
+	      </sec:authorize>
+		   
+		    </ul>
+		  </div>
+		</nav>
     </div>
     <div class="wrapper">  
 

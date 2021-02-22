@@ -16,6 +16,7 @@
 <script
   src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
 <style type="text/css">
 	 body {
 	background-image: url("../resources/pic/background.jpg");
@@ -33,6 +34,41 @@
    	   text-decoration: none;
    }
 </style>
+<script>
+var appRoot = '${root}';
+
+$(document).ready(function() {
+	$("#pictureRoom-submit-btn1").click(function(e) {
+		e.preventDefault();
+		$(this)
+		 .attr("disabled", "disabled")
+		 .html('<i class="fas fa-spinner fa-spin"></i>');
+		
+		var formData = new FormData($("#pictureRoom-form1")[0]);
+		
+		$.ajax({
+			url: appRoot + '/picroom/register',
+			type: 'POST',
+			data: formData,
+	        cache: false,
+	        contentType: false,
+	        enctype: 'multipart/form-data',
+	        processData: false
+		 })
+		 .done(function() {
+			console.log("성공"); 
+			$("#pictureRoom-modal-body1").text("새 글을 등록하였습니다.");
+			$("#pictureRoom-modal1").modal("show");
+			$("#pictureRoom-submit-btn1").removeAttr("disabled");
+		 })
+		 .fail(function() {
+			console.log("실패");
+			$("#pictureRoom-modal-body1").text("등록 실패하였습니다.");
+			$("#pictureRoom-modal1").modal("show");
+		 });
+	});
+});
+</script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -63,7 +99,43 @@
         					
 
        <div class="main">
-       		<jsp:include page="/resources/include/picroom_get.jsp" />
+       		<div class="container-fluid">
+<form id="pictureRoom-form1" action="${root }/picroom/register" method="post" enctype="multipart/form-data">
+ 	<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token}"/> 
+  <div class="form-group">
+    <label for="pictureRoom-input1">제목</label>
+    <input name="title" type="text" class="form-control" id="pictureRoom-input1">
+  </div>
+  <div class="form-group">
+    <label for="pictureRoom-textarea1">내용</label>
+    <textarea name="content" class="form-control" id="pictureRoom-textarea1" rows="3"></textarea>
+  </div>
+   <div class="form-group">
+    <label for="pictureRoom-file1">사진</label>
+    <input type="file" name="file" accept="image/*" class="form-control-file" id="pictureRoom-file1">
+  </div>
+  <input type="hidden" name="memberId" value="abc"/>
+  <button id="pictureRoom-submit-btn1" type="submit" class="btn btn-primary">등록</button>
+</form>
+</div>
+
+<%-- modal --%>
+<!-- Modal -->
+<div id="pictureRoom-modal1" class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">새글 등록</h5>
+      </div>
+      <div id="pictureRoom-modal-body1" class="modal-body">
+        새 글을 등록하였습니다.
+      </div>
+      <div class="modal-footer">
+        <a href="${root }/picroom/list" class="btn btn-primary">목록</a>
+      </div>
+    </div>
+  </div>
+</div>
        </div>
        
        <div class="empty1">
@@ -78,64 +150,7 @@
         </footer>
     </div>
     
-<!-- 수정/삭제 선택 -->
-<div id="pictureRoom-modal1" class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" >글 수정</h5>
-      </div>
-      <div id="pictureRoom-modal-body1" class="modal-body">
-        수정하시겠습니까?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
-        <button id="pictureRoom-modal-confirm-btn1" class="btn btn-danger">확인</button>
-        <button id="pictureRoom-modal-delete-btn2" class="btn btn-danger">삭제</button>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- 수정 결과 -->
-<div id="pictureRoom-modal2" class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" >수정 결과</h5>
-      </div>
-      <div id="pictureRoom-modal-body2" class="modal-body">
-        ...
-      </div>
-      <div id="modal2-fail-footer" class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-      </div>
-      <div id="modal2-success-footer" class="modal-footer">
-        <a href="${root }/picroom/list" class="btn btn-primary">목록</a>
-        <a href="${root }/picroom/id/${vo.id }" class="btn btn-primary">게시글</a>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- 삭제 결과 -->
-<div id="pictureRoom-modal3" class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" >삭제 결과</h5>
-      </div>
-      <div id="pictureRoom-modal-body3" class="modal-body">
-        ...
-      </div>
-      <div id="modal3-fail-footer" class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-      </div>
-      <div id="modal3-success-footer" class="modal-footer">
-        <a href="${root }/picroom/list" class="btn btn-primary">목록</a>
-      </div>
-    </div>
-  </div>
-</div>
 </body>
 </html>
